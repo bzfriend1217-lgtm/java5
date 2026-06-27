@@ -16,20 +16,18 @@ public class Classroom {
 
     public Optional<Student> findById(int id) {
 
-        /*
-        Optional<Student> studentOptional = Optional.empty();
+      // Optional<Student> studentOptional = Optional.empty();
+      //
+      // for (Student student : students) {
+      // if (student.getId() == id) {
+      // studentOptional = Optional.of(student);
+      // break;
+      // }
+      // }
+      //
+      // return studentOptional;
 
-        for (Student student : students) {
-            if (student.getId() == id) {
-                studentOptional = Optional.of(student);
-                break;
-            }
-        }
-
-        return studentOptional;
-        */
-
-        return students.stream()
+      return students.stream()
                 .filter(student -> student.getId() == id)
                 .findFirst();
     }
@@ -37,7 +35,7 @@ public class Classroom {
 
     public List<Student> getPassedStudents() {
         return students.stream()
-                .filter(student -> student.getScore() >= 60)
+                .filter(student -> student.getPassStatus() == PassStatus.PASSED)
                 .toList();
     }
 

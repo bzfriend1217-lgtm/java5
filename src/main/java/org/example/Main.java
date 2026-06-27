@@ -60,22 +60,8 @@ public class Main {
         printStudents(classroom);
         printTopStudent(classroom);
 
-
-
-
-
-
     }
         private int readInt(String label) {
-            //TODO
-            /*
-            * 그러니깐 여기다가 어떻게 scanner를 쓴다는거지? 그게 모르겠네
-            * 그리고 여기에 Scanner.nextLine() 하고 공백은 .trim()해서 지운다는거고
-            * try catch 를 이용해서 예외처리 하고
-            * do while 문을 이용해서 될때까지 하고 그 대신에 이거를 무한정 반복하게끔 하면 안되니깐
-            * 제한 횟수를 두는 식으로 while문 안에다가 횟수 처리 넣어서
-            */
-
             int i = 0;
             do {
                 i++;
@@ -92,6 +78,8 @@ public class Main {
             System.out.println("failed 4 times.");
             return -1;
         }
+
+
 
         private void printStudents(Classroom classroom) {
             System.out.println(classroom.getPassedStudents());
