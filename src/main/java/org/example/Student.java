@@ -10,17 +10,14 @@ public class Student {
         this.id = id;
         this.name = name;
 
-
-        if (score >= 0 && score <= 100) {
+        if (score >= 60 && score <= 100) {
             this.score = score;
+            this.passStatus = PassStatus.PASSED;
+        } else if (score >= 0 && score <= 60) {
+            this.score = score;
+            this.passStatus = PassStatus.FAILED;
         } else {
             throw new IllegalArgumentException("IllegalArgument!");
-        }
-
-        if (this.score >= 60) {
-            this.passStatus = PassStatus.PASSED; // 이게 맞나?
-        } else {
-            this.passStatus = PassStatus.FAILED; // 아니면 이게 맞나? 위에 import가 추가된게 맞나?
         }
     }
 
@@ -38,8 +35,12 @@ public class Student {
     }
 
     public void updateScore(int score) {
-        if (score >= 0 && score <= 100) {
+        if (score >= 60 && score <= 100) {
             this.score = score;
+            this.passStatus = PassStatus.PASSED;
+        } else if (score >= 0 && score <= 60) {
+            this.score = score;
+            this.passStatus = PassStatus.FAILED;
         } else {
             throw new IllegalArgumentException("IllegalArgument!");
         }
